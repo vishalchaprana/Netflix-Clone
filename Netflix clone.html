@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
+   <style>
+html,body{
+    background-color: #141414;
+    padding:0;
+    margin: 0;
+    font-family: Helvetica,Arial ,sans-serif;
+}
+.container{
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+*{
+    box-sizing: border-box;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+
+header{
+    background-color: transparent;
+    position: fixed;
+    z-index: 100;
+    left:0;
+    top: 0;
+    width: 100%;
+    transition: all ease 600ms;
+}
+header.black-bg{
+    background-color: rgb(20, 20, 20);
+}
+.header-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-cont, .right-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header-brand{
+    max-width: 110px;
+}
+.main-nav{
+    list-style: none;
+    display: inline-flex;
+    flex-direction: row;
+}
+.nav-item{
+    margin-right: 20px;
+    color: #e5e5e5;
+    opacity: .83;
+}
+.nav-item.active{
+    color: white;
+    opacity: 1;
+    font-weight: 500;
+}
+.right-cont svg,  .right-cont img{
+    margin-right: 22px;
+    cursor: pointer;
+}
+.right-cont svg{
+    color: white;
+}
+.right-cont img{
+    max-width:40px;
+}
+
+
+
+
+.movies-section{
+    margin: 41px 0;
+}
+.movie-section-heading{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.explore-nudge{
+    color: #54b9c5;
+    font-size: 12px;
+    display: none;
+}
+.movie-section-heading:hover .explore-nudge{
+    display: inline-block;
+}
+.movies-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x:auto;
+    overflow-y: hidden;
+}
+.movie-item{
+    width: 245px;
+    object-fit: contain;
+    margin-right: 6px;
+    border-radius: 4px;
+    position: relative;
+}
+.move-item-img{
+    width: inherit;
+}
+.movie-item .iframe-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+    border: none;
+    outline: none;
+}
+.movie-item:hover .iframe-wrap{
+    display: block;
+}
+.movie-item:hover{
+    transform: scale(1.3);
+    transition: transform linear 300ms;
+}
+
+
+
+.banner-section{
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 98vh;
+    padding-top: 80px;
+    position: relative;
+}
+.banner-content{
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+}
+.banner__title{
+    color: white;
+    font-size: 84px;
+    line-height: 1.1;
+    margin: 0;
+    margin-bottom: 16px;
+    max-width: 40%;
+}
+.banner__info{
+    margin-bottom: 14px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: white;
+}
+.banner__overview{
+    font-size: 16.4px;
+    color: white;
+    line-height: 1.3;
+    max-width: 40%;
+}
+.action-buttons-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.action-button{
+    border:none;
+    background-color: white;
+    padding: 8px 23px;
+    margin-right: 11px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 16px;
+    font-weight: 700;
+    cursor:pointer;
+}
+.action-button:last-child{
+    background-color: rgba(109, 109, 110, 0.7);
+    color:white;
+}
+.banner_fadeBottom{
+    height: 120px;
+    background:linear-gradient(180deg,
+        transparent,
+        rgba(37,37,37,.61),
+        #141414
+    ); 
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+@media (max-width:767px) {
+    .main-nav{
+        display: none;
+    }
+    .banner__overview, .banner__title{
+        max-width: 100%;
+    }
+}
+   </style>
+    
+</head>
+<body>
+    <header id="header" class="">
+        <div class="header-cont container">
+            <div class="left-cont">
+                <img class="header-brand" src="https://images.ctfassets.net/4cd45et68cgf/7LrExJ6PAj6MSIPkDyCO86/542b1dfabbf3959908f69be546879952/Netflix-Brand-Logo.png?w=684&h=456" alt="">
+                <ul class="main-nav">
+                    <li class="nav-item active">Home</li>
+                    <li class="nav-item">Tv Shows</li>
+                    <li class="nav-item">Movies</li>
+                    <li class="nav-item">News & Popular</li>
+                    <li class="nav-item">My List</li>
+                    <li class="nav-item">Browse by Languages</li>
+                </ul>
+            </div>
+            <div class="right-cont">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="search-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 11C13 13.7614 10.7614 16 8 16C5.23858 16 3 13.7614 3 11C3 8.23858 5.23858 6 8 6C10.7614 6 13 8.23858 13 11ZM14.0425 16.2431C12.5758 17.932 10.4126 19 8 19C3.58172 19 0 15.4183 0 11C0 6.58172 3.58172 3 8 3C12.4183 3 16 6.58172 16 11C16 11.9287 15.8417 12.8205 15.5507 13.6497L24.2533 18.7028L22.7468 21.2972L14.0425 16.2431Z" fill="currentColor"></path></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="Hawkins-Icon Hawkins-Icon-Standard"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 4.57092C16.3922 5.05624 18.9998 7.9736 18.9998 11.5V15.2538C20.0486 15.3307 21.0848 15.4245 22.107 15.5347L21.8926 17.5232C18.7219 17.1813 15.409 17 11.9998 17C8.59056 17 5.27764 17.1813 2.10699 17.5232L1.89258 15.5347C2.91473 15.4245 3.95095 15.3307 4.99978 15.2538V11.5C4.99978 7.97345 7.6076 5.05599 11 4.57086V2H13V4.57092ZM8.62568 19.3712C8.6621 20.5173 10.1509 22 11.9993 22C13.8477 22 15.3365 20.5173 15.373 19.3712C15.38 19.1489 15.1756 19 14.9531 19H9.04555C8.82308 19 8.61862 19.1489 8.62568 19.3712Z" fill="currentColor"></path></svg>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAjVBMVEUNfoD///8Ae30AeHoAdXcAdnl6q6z2+/vo8vLx+Ph1sbIAdHfu9PQHfH8AgYPl8vI7kJKRvr+hx8jO4+PJ3d4eioxppqja6eni7OxdoqRSnqC42dqXxsaw09Ntra8ph4l/uLmGtrdapqeozc02lZdMmZuuzM3A2NnU4+SRvL2fy8xSmZpEkZO+1NV1qaqNxlfBAAAEIElEQVR4nO3bXXeiOhQGYNgJg6AiiIiggtbP0U7//8+beJzjoCYtSAQ7630uetVmvZuEEOnWMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvjNi3Ii8rkWtpuiLGCyKxA/dOchIZ3FPmGc5tVckGf4iPMUIA9/QGYNoEZr/c4Y+0zh2FSydX2KY00RfDDJ2ZlEnbadEa+EUYziBrlkkPzav2W4rJc5vYphzTQPTbYGixBZmkc/uYphDPTG29yObHb/p7YYSSQxzqSEGJbZs6FX9kavJQ1mMQV6/RDaVjWzaDU8i/ZDGMBf116knH1nH0FUoLrQ5qR2D3hQVhl0dwUvjihh2VHctsZVqaC3By6K1IoaZ1a2Qj5QXr68leznKpWQu6y5Tfv8wbKXC7HkV7hQjN1xh+rQKmeQkca6w0acFRaoKa9+HyosXci3Ry7Kk5w4de6lhKCps+nl4d+w+q/88VD0uHA3HpSpoLJ/ErH6FdHRkIw+b3GdOPOljK841DE2yvWaiYflXjLGWTKLtaolB9w8Me938uxq+uC8x0LMZUHRboqNh9T+QY3lb4ErXrUL92dXli6N23tPwt04xRsfV+MCi5O+Hl8Gy4W20EMMvXOrhRut1Jsrd+WQy2c82Wt9TVo7hpatY5FhlhvbXtsQsLmh/11w9x0vEAAAAAAAAAAAAAAAAgH8KMc/4l/8HRXyz3e2GLf07uqD/nO+fkLHZ2eeWgnZnkVi0ifSvJOLJpUXKTtoskfxdp9fZb7TWSETprtA50XCD3RWW/Qky19dUQCx3b7r2PV1jV+dd+sU6M88iDc0v1I2Cu5bextuzLqyrdrGgdhOHmL6xrGM/0hP3EfurIM42YY/fkMRYOpR2ZDvt3Yfe/iaLPVn4j7TBiL0l9xexooe24UbXIkvWL7n7uSGryh1JjEfjofQrQefV/7T8X2OuNFIvnq3FmisxlyR+zYoWo4Fi9oRB1kAhapbyytvT4OM9OpUpr1PUZhnR8SOYqosT4sxq99AmHvifxBuEo2G2iXiXc1bEeddYp8vtaN/55K9P9bntH0qJZV+kFHrh9HAI3P8sDodVqL7nCuzwrc0Wwr9YFEjbxGuy5+MWv1F+jcgPPr2XHtAL3l9j/v4Qny+CUguvHGfnvt7n3r44LSu+IFnVIDgarW8vUsSjmepQUnr24iB65dZZYt54NXi8vtEw9V64vDOx/fmHuPre6vSmWa6/r/s5xDls7W7D8lU64fZn6vFvUt4ZMcrfk2D69VnAmQbj95xefm3KiHMn73prN/g1CuO441zm1HacQRyHo19Btva6vMz5/JWd6jQ83z8mx48fZ8kx2fi5R9++tiKiPl1rOxEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALy43/ipMgzSotaqAAAAAElFTkSuQmCC" alt="">
+            </div>
+        </div>
+    </header>
+    <div class="banner-section" id="banner-section">
+        <div class="banner_fadeBottom"></div>
+    </div>
+	
+    <div class="movies-cont container" id="movies-cont">
+    </div>
+    
+</body>
+</html>
+
+<script src="netflixscript.js" defer></script>
